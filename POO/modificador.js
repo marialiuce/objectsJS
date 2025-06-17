@@ -1,4 +1,17 @@
-function capitalizar(vetor){
+function fnCapitalizarNovo(colecao, atributo){
+    if (typeof colecao[0] == 'object'){
+        let resultado = colecao.map(function(obj){
+            let letraInicial = obj[atributo].charAt(0).toUpperCase();
+            let resto = obj[atributo].slice(1);
+        
+            obj[atributo] = letraInicial + resto;
+            return obj;
+        });
+        console.log(resultado);
+    }
+}
+
+function fncapitalizar(vetor){
     let modificado = [];
     
     for(let i = 0; i < vetor.length; i++) {
@@ -29,7 +42,8 @@ function fnCaixaAlta(vetor) {
     }
 
 export default {
-    capitalizar: capitalizar,
+    capitalizar: fncapitalizar,
+    capitalizarNovo: fnCapitalizarNovo,
     ordenar: fnordenar,
     caixaAlta: fnCaixaAlta
 };
