@@ -27,7 +27,7 @@ function fncapitalizar(vetor){
 
 function fnordenar(vetor) {
     return vetor.sort(function(a, b) {
-        return a.localeCompare(b);
+        return a.nome.localeCompare(b.nome);
     });
 }
 
