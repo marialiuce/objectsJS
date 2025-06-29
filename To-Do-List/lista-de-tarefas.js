@@ -1,0 +1,43 @@
+import Tarefa from './tarefa.js';
+
+export default class ListaDeTarefas {
+    constructor() {
+        this.tarefas = [];
+    }
+
+    adicionarTarefa(textoDaTarefa) {
+        if (textoDaTarefa.trim() === '') {
+            alert('Por favor, digite uma tarefa!');
+            return;
+        }
+        const novaTarefa = new Tarefa(textoDaTarefa);
+        this.tarefas.push(novaTarefa);
+    }
+
+    removerTarefa(idDaTarefa) {
+        // Filtra a lista, mantendo apenas as tarefas com ID diferente do que queremos remover.
+        this.tarefas = this.tarefas.filter(tarefa => tarefa.id !== idDaTarefa);
+    }
+
+    alternarConclusao(idDaTarefa) {
+        // Encontra a tarefa pelo ID.
+        const tarefa = this.tarefas.find(tarefa => tarefa.id === idDaTarefa);
+        if (tarefa) {
+            // Usa o próprio método da tarefa para mudar o estado.
+            tarefa.alternarConclusao();
+        }
+    }
+    
+    // Getters para a interface usar
+    getTarefas() {
+        return this.tarefas;
+    }
+
+    getTotalDeTarefas() {
+        return this.tarefas.length;
+    }
+
+    getTotalDeConcluidas() {
+        return this.tarefas.filter(tarefa => tarefa.concluida).length;
+    }
+}
