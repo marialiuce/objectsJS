@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 1. Limpa a lista atual na tela
         taskList.innerHTML = '';
 
-        // 2. Pega as tarefas da nossa instância
+        // 2. Pega as tarefas da instância
         const tarefas = minhaLista.getTarefas();
 
         // 3. Cria o HTML para cada tarefa e adiciona na tela

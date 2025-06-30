@@ -15,7 +15,6 @@ export default class ListaDeTarefas {
     }
 
     removerTarefa(idDaTarefa) {
-        // Filtra a lista, mantendo apenas as tarefas com ID diferente do que queremos remover.
         this.tarefas = this.tarefas.filter(tarefa => tarefa.id !== idDaTarefa);
     }
 
@@ -28,7 +27,6 @@ export default class ListaDeTarefas {
         }
     }
     
-    // Getters para a interface usar
     getTarefas() {
         return this.tarefas;
     }
