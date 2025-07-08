@@ -1,7 +1,6 @@
 import ListaDeTarefas from './ListaDeTarefas.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Seletores do DOM
     const taskForm = document.querySelector('form');
     const taskInput = document.querySelector('#taskInput');
     const taskList = document.querySelector('#taskList');

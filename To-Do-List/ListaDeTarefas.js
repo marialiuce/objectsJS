@@ -19,10 +19,8 @@ export default class ListaDeTarefas {
     }
 
     alternarConclusao(idDaTarefa) {
-        // Encontra a tarefa pelo ID.
         const tarefa = this.tarefas.find(tarefa => tarefa.id === idDaTarefa);
         if (tarefa) {
-            // Usa o próprio método da tarefa para mudar o estado.
             tarefa.alternarConclusao();
         }
     }
