@@ -9,7 +9,7 @@ export default class GerenciadorFinanceiro {
         return this.transacoes;
     }
 
-    adicionarTransacao(tipo, descricao, valor) {
+    adicionarTransacao(descricao, valor, tipo) {
         try {
             const novaTransacao = new Transacao(tipo, descricao, valor);
             this.transacoes.push(novaTransacao);
@@ -35,7 +35,7 @@ export default class GerenciadorFinanceiro {
             .reduce((soma, transacao) => soma + transacao.valor, 0);
     }
 
-    calcularSaldoTotal() {
+    calcularSaldo() {
         return this.calcularTotalReceitas() - this.calcularTotalDespesas();
     }
     
